@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/ic_security_gradient"
+        android:contentDescription="Privacy Monitor Icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Privacy Monitor"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Privacy monitoring is disabled"
+        android:textSize="16sp"
+        android:layout_marginBottom="32dp"
+        android:textAlignment="center" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="32dp"
+        android:gravity="center_vertical">
+        
+        <TextView
+            android:id="@+id/switchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enable Monitoring"
+            android:textSize="18sp"
+            android:layout_marginEnd="10dp" />
+            
+        <Switch
+            android:id="@+id/monitoringSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:thumbTint="@color/switch_thumb_color" />
+            
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/permissionsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grant Permissions"
+        android:textSize="16sp"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This app monitors when your camera or microphone is being used by other applications for privacy protection."
+        android:textSize="14sp"
+        android:layout_marginTop="24dp"
+        android:textAlignment="center"
+        android:alpha="0.7" />
+
+</LinearLayout>

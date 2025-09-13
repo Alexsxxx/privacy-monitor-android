@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+  <!-- Purple shield background -->
+  <path
+      android:fillColor="#FF6200EE"
+      android:pathData="M24,11L13,15V25C13,31 17,36.5 24,38C31,36.5 35,31 35,25V15L24,11Z"/>
+  <!-- White lock inside -->
+  <path
+      android:fillColor="#FFFFFFFF"
+      android:pathData="M24,18C25.1,18 26.5,18.9 26.5,20V21.5H27C27.8,21.5 28.5,22.2 28.5,23V29C29,29.8 28.3,30.5 27.5,30.5H20.5C19.7,30.5 19.5,29.8 19.5,29V23C19.5,22.2 20.2,21.5 21,21.5H21.5V20C21.5,18.9 22.4,18 24,18M24,19.2C23.6,19.2 23,19.6 23,20V21.5H25V20C25,19.6 24.4,19.2 24,19.2Z"/>
+</vector>
