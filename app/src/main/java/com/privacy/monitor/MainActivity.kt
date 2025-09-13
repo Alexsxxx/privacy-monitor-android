@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.Switch
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var switchText: TextView
     private lateinit var monitoringSwitch: Switch
     private lateinit var permissionsButton: Button
+    private lateinit var privacyPolicyLink: TextView
     private lateinit var sharedPreferences: SharedPreferences
     
     private val PERMISSIONS_REQUEST_CODE = 1001
@@ -45,6 +47,7 @@ class MainActivity : AppCompatActivity() {
         switchText = findViewById(R.id.switchText)
         monitoringSwitch = findViewById(R.id.monitoringSwitch)
         permissionsButton = findViewById(R.id.permissionsButton)
+        privacyPolicyLink = findViewById(R.id.privacyPolicyLink)
     }
     
     private fun setupListeners() {
@@ -62,6 +65,11 @@ class MainActivity : AppCompatActivity() {
         
         permissionsButton.setOnClickListener {
             requestPermissions()
+        }
+        
+        privacyPolicyLink.setOnClickListener {
+            // Open privacy policy - you can replace this with actual URL or dialog
+            showPrivacyPolicyDialog()
         }
     }
     
@@ -162,5 +170,29 @@ class MainActivity : AppCompatActivity() {
         return REQUIRED_PERMISSIONS.all {
             ContextCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_GRANTED
         }
+    }
+    
+    private fun showPrivacyPolicyDialog() {
+        val message = """
+            Privacy Monitor Privacy Policy
+            
+            We do not collect, store, or transmit any personal data.
+            
+            Permissions used:
+            • Camera: Only to monitor usage status (no data captured)
+            • Microphone: Only to monitor usage status (no data recorded)  
+            • Notifications: To alert you of privacy events
+            
+            All operations are local to your device.
+            No data is shared with third parties.
+            
+            For full details, see the complete privacy policy included with the app.
+        """.trimIndent()
+        
+        AlertDialog.Builder(this)
+            .setTitle("Privacy Policy")
+            .setMessage(message)
+            .setPositiveButton("OK", null)
+            .show()
     }
 }

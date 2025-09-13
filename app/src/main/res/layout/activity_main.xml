@@ -72,4 +72,18 @@
         android:textAlignment="center"
         android:alpha="0.7" />
 
+    <TextView
+        android:id="@+id/privacyPolicyLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Privacy Policy"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/purple_500"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="8dp" />
+
 </LinearLayout>
